@@ -4,49 +4,49 @@
 
 ## 📌 Overview
 
-This project showcases the implementation of a **centralized CI/CD system** using Jenkins that enables multiple applications to follow a unified and reusable pipeline approach.
+This project demonstrates the implementation of a **centralized CI/CD system** using Jenkins, enabling multiple applications to use a **shared and standardized pipeline framework**.
 
-Rather than having separate Jenkins setups for each team, a **single shared platform** is used to streamline the entire software delivery lifecycle — from code integration to deployment.
+Instead of maintaining separate Jenkins instances for each team, a **single centralized platform** is used to streamline the entire software delivery lifecycle — from code integration to deployment.
 
 ---
 
 ## 🎯 Purpose
 
-The aim of this solution is to:
+This solution is designed to:
 
-* Eliminate redundant CI/CD setups
-* Maintain consistent pipeline execution across projects
+* Eliminate duplicate CI/CD infrastructure
+* Ensure consistent pipeline execution across projects
 * Improve security and governance
-* Promote reusable and modular pipeline design
+* Enable reusable and modular pipeline design
 
 ---
 
-## 🧰 Tools & Technologies
+## 🧰 Technologies Used
 
 * Jenkins (Automation Server)
 * GitHub (Source Code Management)
-* AWS EC2 (Hosting Jenkins)
+* AWS EC2 (Jenkins Hosting)
 * Docker (Containerization)
 * Jenkins Shared Libraries
 
 ---
 
-## 🏗️ System Design
+## 🏗️ System Architecture
 
-Developers commit code to their repositories, which triggers Jenkins pipelines. These pipelines utilize a **shared library** to execute predefined stages and build containerized applications.
+Developers push code to GitHub repositories, which triggers Jenkins pipelines. These pipelines utilize a **shared library** to execute standardized stages and build containerized applications.
 
-### 🔄 Workflow:
+### 🔄 Workflow
 
 ```
 Developer → GitHub → Jenkins (EC2) → Shared Library → Agent Node 
-→ Build → Test → Security Check → Deploy → Docker Image
+→ Build → Test → Scan → Deploy → Docker Image
 ```
 
 ---
 
 ## 📊 Architecture Diagram
 
-📸 Add your diagram here:
+📸 Location:
 
 ```
 docs/architecture-diagram.png
@@ -56,31 +56,37 @@ docs/architecture-diagram.png
 
 ## 📁 Repositories Overview
 
-### 🔹 Shared Pipeline Library
-# Repo link: 
+### 🔹 Jenkins Shared Library
+
+**Repository:**
 https://github.com/megha1002240/jenkins-shared-library
 
-This repository contains reusable pipeline logic used across all applications.
+This repository contains reusable pipeline logic shared across multiple applications.
 
 **Structure:**
 
 ```
-jenkins-shared-lib/
+jenkins-shared-library/
 │
 └── vars/
     └── cicdPipeline.groovy
+```
 
-<img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/f514073f-ceb6-450f-9cea-dc07c7ca4aec" />
+📸 Screenshot:
+
+<img width="1920" height="1008" src="https://github.com/user-attachments/assets/f514073f-ceb6-450f-9cea-dc07c7ca4aec" />
 
 ---
 
-### 🔹 Sample Application 1 (Node.js)
-# Repo link: 
+### 🔹 Node.js Application
+
+**Repository:**
 https://github.com/megha1002240/app1-nodejs
+
 **Structure:**
 
 ```
-nodejs-app/
+app-nodejs/
 │
 ├── app.js
 ├── package.json
@@ -90,20 +96,19 @@ nodejs-app/
 
 📸 Screenshot:
 
-
-<img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/319213a1-0a8f-4c4c-812b-f803c3bfa877" />
-
-
+<img width="1920" height="1008" src="https://github.com/user-attachments/assets/319213a1-0a8f-4c4c-812b-f803c3bfa877" />
 
 ---
 
-### 🔹 Sample Application 2 (Python)
-# Repo link:
+### 🔹 Python Application
+
+**Repository:**
 https://github.com/megha1002240/app2-python
+
 **Structure:**
 
 ```
-python-app/
+app-python/
 │
 ├── app.py
 ├── Dockerfile
@@ -112,59 +117,49 @@ python-app/
 
 📸 Screenshot:
 
-
-<img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/af87d4ab-f5b8-4ac9-8566-b332ec4ab443" />
-
-
+<img width="1920" height="1008" src="https://github.com/user-attachments/assets/af87d4ab-f5b8-4ac9-8566-b332ec4ab443" />
 
 ---
 
-## ⚙️ Jenkins Setup
+## ⚙️ Jenkins Infrastructure Setup
 
-The Jenkins server is hosted on an EC2 instance and configured for centralized pipeline execution.
+Jenkins is deployed on an AWS EC2 instance and configured to support centralized CI/CD operations.
 
-### 🔧 Steps Performed:
+### 🔧 Setup Steps
 
-* Created EC2 instance
-* Installed Java runtime
-* Installed and configured Jenkins
-* Added necessary plugins
-* Configured build agents
-* Set up credentials
-* Integrated shared library
+* Launch EC2 instance
+* Install Java
+* Install Jenkins
+* Install required plugins
+* Configure Jenkins agents
+* Set up credentials (GitHub, Docker)
+* Integrate shared library
 
-📸 Dashboard Screenshot:
+📸 Jenkins Dashboard:
 
-
-![WhatsApp Image 2026-03-23 at 2 28 11 PM](https://github.com/user-attachments/assets/d01578d0-2438-4594-80d3-ac6fb67ee370)
-
-
+<img src="https://github.com/user-attachments/assets/d01578d0-2438-4594-80d3-ac6fb67ee370" />
 
 ---
 
-## 🖥️ Build Agent Setup
+## 🖥️ Jenkins Agent Configuration
 
-A dedicated agent is configured to handle pipeline execution.
+A dedicated build agent is configured for executing pipelines.
 
-### Configuration Details:
+### Configuration Details
 
-* Name: docker-agent
-* Executors: 1
-* Connection: SSH
-* Label: docker
+* **Name:** docker-agent
+* **Executors:** 1
+* **Launch Method:** SSH
+* **Label:** docker
 
-📸 Screenshot:
+📸 Screenshots:
 
-
-<img width="1920" height="1008" alt="Screenshot 2026-03-19 152211" src="https://github.com/user-attachments/assets/53840038-489f-4c31-b5c1-277326aa2024" />
-<img width="1920" height="1008" alt="Screenshot 2026-03-19 152148" src="https://github.com/user-attachments/assets/67d28609-e80d-45e8-9721-1ec4abef884b" />
-
-
-
+<img width="1920" height="1008" src="https://github.com/user-attachments/assets/53840038-489f-4c31-b5c1-277326aa2024" />
+<img width="1920" height="1008" src="https://github.com/user-attachments/assets/67d28609-e80d-45e8-9721-1ec4abef884b" />
 
 ---
 
-## 📚 Shared Library Integration
+## 📚 Shared Library Configuration
 
 Configured in Jenkins under:
 
@@ -172,7 +167,7 @@ Configured in Jenkins under:
 Manage Jenkins → Global Pipeline Libraries
 ```
 
-**Library Identifier:**
+### Library Name
 
 ```
 shared-library-config
@@ -180,100 +175,87 @@ shared-library-config
 
 📸 Screenshot:
 
-
-<img width="1920" height="1008" alt="Screenshot 2026-03-19 152239" src="https://github.com/user-attachments/assets/7b369f99-7f4c-464f-abaf-085de6d39549" />
-
-
+<img width="1920" height="1008" src="https://github.com/user-attachments/assets/7b369f99-7f4c-464f-abaf-085de6d39549" />
 
 ---
 
-## 🔄 Pipeline Jobs
+## 🔄 Jenkins Pipelines
 
-Two applications are integrated into Jenkins:
+Two pipeline jobs are configured:
 
 * nodejs-app-pipeline
 * python-app-pipeline
 
-📸 Scrrenshot:
+📸 Screenshots:
 
-<img width="1920" height="1008" alt="Screenshot 2026-03-19 145336" src="https://github.com/user-attachments/assets/7012acdf-15e2-4dae-8ad2-456490e6f881" />
-<img width="1920" height="1008" alt="Screenshot 2026-03-19 145115" src="https://github.com/user-attachments/assets/4a88c750-02a5-407e-8e4b-430ac3f37722" />
-
-
-
+<img width="1920" height="1008" src="https://github.com/user-attachments/assets/7012acdf-15e2-4dae-8ad2-456490e6f881" />
+<img width="1920" height="1008" src="https://github.com/user-attachments/assets/4a88c750-02a5-407e-8e4b-430ac3f37722" />
 
 ---
 
-## 🚀 Pipeline Execution Stages
+## 🚀 CI/CD Pipeline Stages
 
-Each pipeline follows a consistent structure:
+Each pipeline follows a standardized flow:
 
-1. Code Checkout
-2. Build Process
-3. Testing Phase
-4. Security Scanning
-5. Deployment
+1. Checkout Code
+2. Build Application
+3. Run Tests
+4. Security Scan
+5. Deploy Application
 
-📸 Stage View:
+📸 Pipeline Stage View:
 
-
-<img width="1920" height="1008" alt="Screenshot 2026-03-19 145336" src="https://github.com/user-attachments/assets/9d153198-4d86-46b4-991a-807d2f0b6f4d" />
-
-
+<img width="1920" height="1008" src="https://github.com/user-attachments/assets/9d153198-4d86-46b4-991a-807d2f0b6f4d" />
 
 ---
 
-## 🐳 Docker Build Process
+## 🐳 Docker Build
 
-During the build stage, Docker images are created for deployment.
+Docker images are created during the build stage.
 
-### Example Command:
+### Example Command
 
 ```bash
-docker build -t your-dockerhub-meghapatil56285/nodejs-app:latest .
+docker build -t meghapatil56285/nodejs-app:latest .
 ```
 
-
-
 ---
 
-## 📦 Deliverables
+## 📦 Project Deliverables
 
-This project includes:
-
-* Centralized Jenkins platform
-* Reusable shared pipeline library
-* Multiple application pipelines
+* Centralized Jenkins CI/CD platform
+* Shared pipeline library
+* Multi-application pipeline setup
 * Automated Docker image builds
-* Role-based access configuration
+* Role-based access control
 
 ---
 
-## 📚 Learning Highlights
+## 📚 Key Learnings
 
-Through this project, the following skills are demonstrated:
+This project demonstrates:
 
-* Designing scalable CI/CD systems
-* Jenkins administration and configuration
-* Creating reusable pipeline libraries
-* Docker-based application deployment
-* Cloud-based infrastructure setup
-* Managing multi-project CI/CD workflows
-
----
-
-## ✅ Summary
-
-This implementation proves how a centralized Jenkins setup can efficiently manage multiple applications using shared logic. It ensures uniformity, reduces operational overhead, and simplifies CI/CD management.
+* CI/CD pipeline automation
+* Jenkins administration
+* Shared library implementation
+* Docker-based deployments
+* AWS infrastructure setup
+* Multi-project pipeline design
 
 ---
 
-## 🔮 Possible Enhancements
+## ✅ Conclusion
 
-* Integration with Kubernetes for orchestration
-* Advanced vulnerability scanning tools
-* Infrastructure automation using Terraform
-* Automated rollback and failure handling
+The centralized Jenkins platform successfully enables multiple applications to share a common pipeline structure. This improves **scalability, maintainability, and consistency** across development teams.
+
+---
+
+## 🔮 Future Enhancements
+
+* Kubernetes integration for container orchestration
+* Advanced security scanning (Trivy, SonarQube)
+* Infrastructure as Code (Terraform)
+* Automated rollback mechanisms
 * Monitoring and alerting integration
 
 ---
@@ -281,6 +263,6 @@ This implementation proves how a centralized Jenkins setup can efficiently manag
 ## 👩‍💻 Author
 
 **Megha Patil**
-Cloud & DevOps Enthusiast
+Cloud & DevOps Engineer
 
 ---
