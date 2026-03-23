@@ -69,7 +69,7 @@ jenkins-shared-lib/
 │
 └── vars/
     └── cicdPipeline.groovy
-```
+
 <img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/f514073f-ceb6-450f-9cea-dc07c7ca4aec" />
 
 ---
@@ -90,10 +90,10 @@ nodejs-app/
 
 📸 Screenshot:
 
-```
+
 <img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/319213a1-0a8f-4c4c-812b-f803c3bfa877" />
 
-```
+
 
 ---
 
@@ -112,10 +112,10 @@ python-app/
 
 📸 Screenshot:
 
-```
+
 <img width="1920" height="1008" alt="image" src="https://github.com/user-attachments/assets/af87d4ab-f5b8-4ac9-8566-b332ec4ab443" />
 
-```
+
 
 ---
 
@@ -135,10 +135,10 @@ The Jenkins server is hosted on an EC2 instance and configured for centralized p
 
 📸 Dashboard Screenshot:
 
-```
+
 ![WhatsApp Image 2026-03-23 at 2 28 11 PM](https://github.com/user-attachments/assets/d01578d0-2438-4594-80d3-ac6fb67ee370)
 
-```
+
 
 ---
 
@@ -155,12 +155,12 @@ A dedicated agent is configured to handle pipeline execution.
 
 📸 Screenshot:
 
-```
+
 <img width="1920" height="1008" alt="Screenshot 2026-03-19 152211" src="https://github.com/user-attachments/assets/53840038-489f-4c31-b5c1-277326aa2024" />
 <img width="1920" height="1008" alt="Screenshot 2026-03-19 152148" src="https://github.com/user-attachments/assets/67d28609-e80d-45e8-9721-1ec4abef884b" />
 
 
-```
+
 
 ---
 
@@ -180,10 +180,10 @@ shared-library-config
 
 📸 Screenshot:
 
-```
+
 <img width="1920" height="1008" alt="Screenshot 2026-03-19 152239" src="https://github.com/user-attachments/assets/7b369f99-7f4c-464f-abaf-085de6d39549" />
 
-```
+
 
 ---
 
@@ -195,12 +195,12 @@ Two applications are integrated into Jenkins:
 * python-app-pipeline
 
 📸 Scrrenshot:
-```
+
 <img width="1920" height="1008" alt="Screenshot 2026-03-19 145336" src="https://github.com/user-attachments/assets/7012acdf-15e2-4dae-8ad2-456490e6f881" />
 <img width="1920" height="1008" alt="Screenshot 2026-03-19 145115" src="https://github.com/user-attachments/assets/4a88c750-02a5-407e-8e4b-430ac3f37722" />
 
 
-```
+
 
 ---
 
@@ -216,10 +216,10 @@ Each pipeline follows a consistent structure:
 
 📸 Stage View:
 
-```
+
 <img width="1920" height="1008" alt="Screenshot 2026-03-19 145336" src="https://github.com/user-attachments/assets/9d153198-4d86-46b4-991a-807d2f0b6f4d" />
 
-```
+
 
 ---
 
