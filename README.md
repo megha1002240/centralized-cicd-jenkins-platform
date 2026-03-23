@@ -51,6 +51,7 @@ Developer → GitHub → Jenkins (EC2) → Shared Library → Agent Node
 ```
 docs/architecture-diagram.png
 ```
+<img width="885" height="561" alt="image" src="https://github.com/user-attachments/assets/cd069cc3-af22-4494-b152-0eefb28a84a6" />
 
 ---
 
