@@ -138,6 +138,8 @@ Jenkins is deployed on an AWS EC2 instance and configured to support centralized
 📸 Jenkins Dashboard:
 
 <img src="https://github.com/user-attachments/assets/d01578d0-2438-4594-80d3-ac6fb67ee370" />
+<img width="1920" height="1008" alt="Screenshot 2026-03-19 152305" src="https://github.com/user-attachments/assets/ad6a1289-6f8f-4c39-b617-17e482618372" />
+
 
 ---
 
