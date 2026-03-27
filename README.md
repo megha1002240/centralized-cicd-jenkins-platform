@@ -1,4 +1,4 @@
-# 🚀 Centralized CI/CD System with Shared Jenkins Pipelines
+# Centralized CI/CD System with Shared Jenkins Pipelines
 
 ---
 
